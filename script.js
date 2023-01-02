@@ -5,9 +5,16 @@ const dice = document.getElementById(diceID);
 
 btn.addEventListener("click", function() {
     const randomNumber = Math.floor(Math.random()*6) + 1; 
-    if (dice.children.length === 0) {
-        const p = document.createElement("p");
-        dice.append(p);
+    const allDiceIDs = ["one","two","three","four","five","six"];
+    for (let i=0; i<allDiceIDs.length; i++) {
+        document.getElementById(allDiceIDs[i]).style.opacity = "0";
     }
-    dice.children[0].innerHTML = randomNumber; 
+    document.getElementById(allDiceIDs[randomNumber - 1]).style.opacity = "1";
 });
+
+const randomNumber = Math.floor(Math.random()*6) + 1; 
+const allDiceIDs = ["one","two","three","four","five","six"];
+for (let i=0; i<allDiceIDs.length; i++) {
+    document.getElementById(allDiceIDs[i]).style.opacity = "0";
+}
+document.getElementById(allDiceIDs[randomNumber - 1]).style.opacity = "1";
