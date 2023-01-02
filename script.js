@@ -9,5 +9,5 @@ btn.addEventListener("click", function() {
         const p = document.createElement("p");
         dice.append(p);
     }
-    diceNumber.innerHTML = randomNumber; 
+    dice.children[0].innerHTML = randomNumber; 
 });
